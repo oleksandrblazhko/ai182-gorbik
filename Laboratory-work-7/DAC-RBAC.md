@@ -11,14 +11,14 @@
    `create user maksym with password '123';`
 4. Створіть роль в СКБД PostgreSQL (назва співпадає з вашим прізвищем латинськими літерами) і надайте новому
    користувачеві можливість наслідувати цю роль.
-   ```
+   ```sql
    create role gorbik;
    grant gorbik to maksym;
    ```
 5. Створіть реляційну таблицю з урахуванням варіанту з таблиці 2.1 від імені користувача-адміністратора.
 
-   ```
-    Create table university
+   ```sql
+    create table university
     (
         u_id integer,
         name varchar,
@@ -28,9 +28,9 @@
 
 6. Внесіть один рядок в таблицю, використовуючи команду insert into ..., відповідно до варіанту.
 
-   ```
+   ```sql
    
-   Insert into university
+   insert into university
    values (1, 'ONPU', 1918);
    
    ```

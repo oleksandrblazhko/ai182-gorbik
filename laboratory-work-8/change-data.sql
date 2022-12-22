@@ -5,8 +5,9 @@ declare
     query_str    varchar;
     count_result integer;
 begin
-    select count(*) into count_result from university where name = old_name;
-    query_str := 'update university set name = ''' || new_name || ''' where name = ''' || old_name || '''';
+    select count(*) into count_result from university where name = old_name and spot_conf < 3;
+    query_str := 'update university set name = ''' || new_name || ''' where name = ''' || old_name ||
+                 ''' and spot_conf<3';
     raise notice 'Query: %', query_str;
     execute query_str;
     return count_result;
